@@ -1,0 +1,67 @@
+{
+  "name": "pivotal-tracker-import",
+  "description": "Pivotal Tracker import CSV generator",
+  "version": "0.0.0",
+  "author": "Travis Vignon @lookitsatravis",
+  "bin": {
+    "pivotal-tracker-import": "./bin/run"
+  },
+  "bugs": "https://github.com/lookitsatravis/pivotal-tracker-import/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^1",
+    "cli-ux": "^4.9.3",
+    "csv": "^5.0.0",
+    "inflection": "^1.12.0"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1",
+    "@oclif/tslint": "^1",
+    "@types/chai": "^4",
+    "@types/inflection": "^1.5.28",
+    "@types/mocha": "^5",
+    "@types/node": "^9",
+    "chai": "^4",
+    "mocha": "^5",
+    "np": "^3.0.4",
+    "nyc": "^11",
+    "prettier": "^1.14.3",
+    "ts-node": "^6",
+    "tslib": "^1",
+    "tslint": "^5",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^2.8"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/lookitsatravis/pivotal-tracker-import",
+  "keywords": [
+    "oclif",
+    "pivotal tracker"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "pivotal-tracker-import"
+  },
+  "repository": "lookitsatravis/pivotal-tracker-import",
+  "scripts": {
+    "lint": "tslint -t codeFrame 'src/**/*.ts'",
+    "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest",
+    "release": "np",
+    "test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
